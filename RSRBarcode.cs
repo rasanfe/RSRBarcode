@@ -75,14 +75,14 @@ namespace RSRBarcode
         public void BarcodeGenerate(string source, string outputFile)
         {
             BarcodeWriter writer = new BarcodeWriter();
-            
+
             writer.Format = BarcodeFormat.CODE_39;
             writer.Options = new EncodingOptions
             {
-              Height = 41,
-              Width = 423,
-              PureBarcode = true,
-             Margin = 0,
+                Height = 41,
+                Width = 423,
+                PureBarcode = true,
+                Margin = 0,
             };
             var bitmap = writer.Write(source);
             bitmap.Save(outputFile);
@@ -104,7 +104,7 @@ namespace RSRBarcode
             var bitmap = writer.Write(source);
             bitmap.Save(outputFile);
             bitmap.Dispose();
-            return;         
+            return;
         }
 
         public string PdfToBmp(string source, string outputFile, int pageFrom, int pageTo)

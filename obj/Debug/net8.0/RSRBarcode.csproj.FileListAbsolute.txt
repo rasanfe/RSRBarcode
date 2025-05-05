@@ -1,0 +1,13 @@
+C:\proyecto pw2022\Blog\Net8\RSRBarcode\bin\Debug\net8.0\x64\pdfium.dll
+C:\proyecto pw2022\Blog\Net8\RSRBarcode\bin\Debug\net8.0\RSRBarcode.deps.json
+C:\proyecto pw2022\Blog\Net8\RSRBarcode\bin\Debug\net8.0\RSRBarcode.dll
+C:\proyecto pw2022\Blog\Net8\RSRBarcode\bin\Debug\net8.0\RSRBarcode.pdb
+C:\proyecto pw2022\Blog\Net8\RSRBarcode\obj\Debug\net8.0\RSRBarcode.csproj.AssemblyReference.cache
+C:\proyecto pw2022\Blog\Net8\RSRBarcode\obj\Debug\net8.0\RSRBarcode.GeneratedMSBuildEditorConfig.editorconfig
+C:\proyecto pw2022\Blog\Net8\RSRBarcode\obj\Debug\net8.0\RSRBarcode.AssemblyInfoInputs.cache
+C:\proyecto pw2022\Blog\Net8\RSRBarcode\obj\Debug\net8.0\RSRBarcode.AssemblyInfo.cs
+C:\proyecto pw2022\Blog\Net8\RSRBarcode\obj\Debug\net8.0\RSRBarcode.csproj.CoreCompileInputs.cache
+C:\proyecto pw2022\Blog\Net8\RSRBarcode\obj\Debug\net8.0\RSRBarcode.dll
+C:\proyecto pw2022\Blog\Net8\RSRBarcode\obj\Debug\net8.0\refint\RSRBarcode.dll
+C:\proyecto pw2022\Blog\Net8\RSRBarcode\obj\Debug\net8.0\RSRBarcode.pdb
+C:\proyecto pw2022\Blog\Net8\RSRBarcode\obj\Debug\net8.0\ref\RSRBarcode.dll

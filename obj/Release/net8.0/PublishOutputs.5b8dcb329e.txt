@@ -1,0 +1,11 @@
+C:\proyecto pw2022\Blog\Net8\RSRBarcode\bin\Release\net8.0\publish\x64\pdfium.dll
+C:\proyecto pw2022\Blog\Net8\RSRBarcode\bin\Release\net8.0\publish\RSRBarcode.dll
+C:\proyecto pw2022\Blog\Net8\RSRBarcode\bin\Release\net8.0\publish\RSRBarcode.deps.json
+C:\proyecto pw2022\Blog\Net8\RSRBarcode\bin\Release\net8.0\publish\RSRBarcode.pdb
+C:\proyecto pw2022\Blog\Net8\RSRBarcode\bin\Release\net8.0\publish\Microsoft.Win32.SystemEvents.dll
+C:\proyecto pw2022\Blog\Net8\RSRBarcode\bin\Release\net8.0\publish\PdfiumViewer.dll
+C:\proyecto pw2022\Blog\Net8\RSRBarcode\bin\Release\net8.0\publish\System.Drawing.Common.dll
+C:\proyecto pw2022\Blog\Net8\RSRBarcode\bin\Release\net8.0\publish\zxing.dll
+C:\proyecto pw2022\Blog\Net8\RSRBarcode\bin\Release\net8.0\publish\ZXing.Windows.Compatibility.dll
+C:\proyecto pw2022\Blog\Net8\RSRBarcode\bin\Release\net8.0\publish\nl\PdfiumViewer.resources.dll
+C:\proyecto pw2022\Blog\Net8\RSRBarcode\bin\Release\net8.0\publish\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll

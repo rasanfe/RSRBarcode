@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "dgSpecHash": "+oFiU4mY9Zt9q9kWaZPpNm+2ML8IMFAAC0pA/0xDoViKziWefOfpgOaj5UqiruYb2oW+286oNk1uItR89NnsHg==",
+  "success": true,
+  "projectFilePath": "C:\\proyecto pw2022\\Blog\\Net8\\RSRBarcode\\RSRBarcode.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.win32.systemevents\\8.0.0\\microsoft.win32.systemevents.8.0.0.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\pdfiumviewer\\2.13.0\\pdfiumviewer.2.13.0.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\pdfiumviewer.native.x86_64.v8-xfa\\2018.4.8.256\\pdfiumviewer.native.x86_64.v8-xfa.2018.4.8.256.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\system.drawing.common\\8.0.15\\system.drawing.common.8.0.15.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\zxing.net\\0.16.10\\zxing.net.0.16.10.nupkg.sha512",
+    "C:\\Users\\Usuario\\.nuget\\packages\\zxing.net.bindings.windows.compatibility\\0.16.13\\zxing.net.bindings.windows.compatibility.0.16.13.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"PdfiumViewer 2.13.0\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net8.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "PdfiumViewer",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
+}
