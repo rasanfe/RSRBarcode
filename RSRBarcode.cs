@@ -1,5 +1,7 @@
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Reflection;
+using System.Runtime.InteropServices;
 using SkiaSharp;
 using ZXing;
 using ZXing.Common;
@@ -48,6 +50,58 @@ namespace RSRBarcode
         1.1         Change GhostScript reference to PdfiumViewer                                        -   2023-03-08
         1.2         Migracion a .NET 10: PdfiumViewer -> PDFtoImage y ZXing SkiaSharp                   -   2026-06-27
         */
+        #endregion
+
+        #region Resolución de DLLs nativas (clave al hostear desde PowerBuilder)
+        /*
+         * ¿Por qué esto? SkiaSharp (libSkiaSharp) y PDFium (pdfium) son librerías NATIVAS que se
+         * entregan bajo 'runtimes\win-<arch>\native\'. En una app .NET normal, el host resuelve esa
+         * ruta leyendo RSRBarcode.deps.json. Pero cuando nos hostea un proceso ajeno (PowerBuilder,
+         * vía .NET DLL Importer), el host es PB y usa SU propio deps.json: la carpeta 'runtimes\' de
+         * RSRBarcode NUNCA entra en el search path de nativas. Resultado: o no encuentra la DLL, o
+         * carga una de bitness equivocado -> BadImageFormatException (0x8007000B) al primer uso.
+         *
+         * Solución: registramos un DllImportResolver propio que carga libSkiaSharp/pdfium desde la
+         * subcarpeta 'runtimes\win-<arch>\native\' que cuelga de ESTA DLL, eligiendo arquitectura
+         * según el bitness del proceso. Así funciona igual bajo PB (x86 o x64) que como app .NET.
+         */
+        static RSRbarcode()
+        {
+            TryRegister(typeof(SKBitmap).Assembly);        // libSkiaSharp (SkiaSharp)
+            TryRegister(typeof(Conversion).Assembly);      // pdfium (PDFtoImage)
+        }
+
+        private static void TryRegister(Assembly assembly)
+        {
+            // SetDllImportResolver lanza si el assembly ya tiene uno: lo ignoramos (mejor el suyo).
+            try { NativeLibrary.SetDllImportResolver(assembly, ResolveNative); } catch { }
+        }
+
+        private static IntPtr ResolveNative(string libraryName, Assembly assembly, DllImportSearchPath? searchPath)
+        {
+            string baseName = Path.GetFileNameWithoutExtension(libraryName);
+            if (!baseName.Equals("libSkiaSharp", StringComparison.OrdinalIgnoreCase) &&
+                !baseName.Equals("pdfium", StringComparison.OrdinalIgnoreCase))
+            {
+                return IntPtr.Zero; // no es de las nuestras -> resolución por defecto
+            }
+
+            string rid = RuntimeInformation.ProcessArchitecture switch
+            {
+                Architecture.X86 => "win-x86",
+                Architecture.Arm64 => "win-arm64",
+                _ => "win-x64",
+            };
+
+            string baseDir = Path.GetDirectoryName(typeof(RSRbarcode).Assembly.Location)!;
+            string candidate = Path.Combine(baseDir, "runtimes", rid, "native", baseName + ".dll");
+
+            if (File.Exists(candidate) && NativeLibrary.TryLoad(candidate, out IntPtr handle))
+            {
+                return handle;
+            }
+            return IntPtr.Zero; // fallback a la resolución por defecto
+        }
         #endregion
 
         /// <summary>
