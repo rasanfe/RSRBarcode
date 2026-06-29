@@ -1,17 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net10.0-windows</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="PdfiumViewer" Version="2.13.0" />
-    <PackageReference Include="PdfiumViewer.Native.x86_64.v8-xfa" Version="2018.4.8.256" />
-    <PackageReference Include="System.Drawing.Common" Version="8.0.15" />
-    <PackageReference Include="ZXing.Net" Version="0.16.10" />
-    <PackageReference Include="ZXing.Net.Bindings.Windows.Compatibility" Version="0.16.13" />
+    <!-- PdfiumViewer (abandonado) sustituido por PDFtoImage (OSS/MIT, PDFium+SkiaSharp, net10).
+         La lectura/generacion de codigos pasa al binding SkiaSharp de ZXing (multiplataforma),
+         en lugar de ZXing.Net.Bindings.Windows.Compatibility (System.Drawing). -->
+    <PackageReference Include="PDFtoImage" Version="5.2.1" />
+    <PackageReference Include="ZXing.Net" Version="0.16.11" />
+    <PackageReference Include="ZXing.Net.Bindings.SkiaSharp" Version="0.16.22" />
+    <!-- System.Drawing.Common solo para re-codificar a BMP en PdfToBmp (compat. de API). -->
+    <PackageReference Include="System.Drawing.Common" Version="10.0.9" />
   </ItemGroup>
 
 </Project>
